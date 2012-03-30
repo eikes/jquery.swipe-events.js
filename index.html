@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Test Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Maybe use normalize.css and html5 shiv: -->
+    <!-- <link href="http://necolas.github.com/normalize.css/normalize.css" rel="stylesheet"> -->
+    <!-- <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script> -->
+    <link href="css/main.css" rel="stylesheet">
+  </head>
+  <body>
+    <div id=page>
+      <header>
+        <h1>
+          jQuery Swipe Events Demo
+        </h1>
+      </header>
+      <div id=swipebox>
+        Swipe Here!
+      </div>
+    </div>
+    <footer>
+      An experiment by <a href="http://eike.se/nd">Eike Send</a>.
+    </footer>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.swipe-events.js"></script>
+    <script>
+      $(function(){
+        $('#swipebox')
+          .swipeEvents()
+          .bind("swipeLeft",  function(){ $('#swipebox').html("Swipe Left"); })
+          .bind("swipeRight", function(){ $('#swipebox').html("Swipe Right"); })
+          .bind("swipeDown",  function(){ $('#swipebox').html("Swipe Down"); })
+          .bind("swipeUp",    function(){ $('#swipebox').html("Swipe Up"); });
+      });
+    </script>
+  </body>
+</html>
