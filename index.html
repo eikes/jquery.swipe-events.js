@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Test Template</title>
+    <title>jQuery Swipe Events Demo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Maybe use normalize.css and html5 shiv: -->
     <!-- <link href="http://necolas.github.com/normalize.css/normalize.css" rel="stylesheet"> -->
@@ -29,6 +29,7 @@
       $(function(){
         $('#swipebox')
           .swipeEvents()
+          .bind("touchstart", function(){ $('#swipebox').html(""); })
           .bind("swipeLeft",  function(){ $('#swipebox').html("Swipe Left"); })
           .bind("swipeRight", function(){ $('#swipebox').html("Swipe Right"); })
           .bind("swipeDown",  function(){ $('#swipebox').html("Swipe Down"); })
