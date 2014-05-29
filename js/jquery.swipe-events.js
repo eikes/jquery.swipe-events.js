@@ -24,20 +24,21 @@
         if (touches && touches.length) {
           var deltaX = startX - touches[0].pageX;
           var deltaY = startY - touches[0].pageY;
+          var threshold = window.devicePixelRatio >= 2 ? 25 : 50;
           
-          if (deltaX >= 50) {
+          if (deltaX >= threshold) {
             $this.trigger("swipeLeft");
           }
-          if (deltaX <= -50) {
+          if (deltaX <= -threshold) {
             $this.trigger("swipeRight");
           }
-          if (deltaY >= 50) {
+          if (deltaY >= threshold) {
             $this.trigger("swipeUp");
           }
-          if (deltaY <= -50) {
+          if (deltaY <= -threshold) {
             $this.trigger("swipeDown");
           }
-          if (Math.abs(deltaX) >= 50 || Math.abs(deltaY) >= 50) {
+          if (Math.abs(deltaX) >= threshold || Math.abs(deltaY) >= threshold) {
             $this.unbind('touchmove', touchmove);
             $this.unbind('touchend', touchend);
           }
